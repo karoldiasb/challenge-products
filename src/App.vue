@@ -11,7 +11,8 @@
       <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container">
           <a href="#" class="navbar-brand d-flex align-items-center">
-            <strong>Home</strong>
+            <strong> Home </strong> 
+            | {{title}}
           </a>
         </div>
       </div>
@@ -161,6 +162,7 @@ export default {
   components: {},
   data(){
     return {
+      title: '',
       products: [],
       currentFile: [],
       errors: [],
@@ -177,14 +179,14 @@ export default {
     }
   },
   mounted(){
-    // this.getHome()
+    this.getHome()
     this.listProducts()
   },
 
   methods:{
     getHome(){
-      Home.getHome().then(resposta => {
-        console.log(resposta)
+      Home.getHome().then(response => {
+        this.title = response.data
       })
     },
 
