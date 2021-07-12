@@ -211,7 +211,6 @@ export default {
         this.currentFile = []
 
       }).catch(e => {
-        console.log(e.response.data.errors)
         this.errors_exist = true;
         this.errors = e.response.data.errors
       })

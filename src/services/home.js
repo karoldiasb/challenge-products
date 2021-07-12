@@ -2,6 +2,6 @@ import { http } from './config'
 
 export default {
     getHome: () => {
-        return http.get('/')
+        return http.get('/home')
     }
 }
